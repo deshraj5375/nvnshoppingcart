@@ -1,9 +1,9 @@
 - name: Create an ec2 instance
   ec2:
     key_name: "{{ keypair }}"
-    aws_access_key: 
-    aws_secret_key: 
-    group: Jenkins  # security group name
+    aws_access_key: "{{ access_key }}" 
+    aws_secret_key: "{{ secret_key }}"
+    group: launch-wizard-1  # security group name
     instance_type: "{{ instance_type}}"
     image: "{{ ami }}"
     wait: true
@@ -13,7 +13,7 @@
       Name: "Demo"
     instance_tags:
       Name: "Demo"
-    vpc_subnet_id: "subnet-170dd35b"
+    vpc_subnet_id: "subnet-e6de8f8e"
     assign_public_ip: yes
   register: ec2
     
